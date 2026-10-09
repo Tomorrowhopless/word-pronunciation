@@ -15,7 +15,7 @@ FILES = ('manifest.json', 'background.js', 'content.js', 'content.css', 'speech-
          'speech-engine.js', 'translation-client.js', 'reviewed-translations.js',
          'local-model-core.js', 'local-model.html', 'local-model.js', 'model-bridge.js',
          'local-speech-core.js', 'local-speech-document.js', 'local-speech-bridge.js',
-         'piper-phonemizer.js', 'LICENSE', 'DATA-LICENSE.html', 'ECDICT-LICENSE.txt', 'WORDSET-LICENSE.txt')
+         'piper-phonemizer.js', 'README.md', 'LICENSE', 'DATA-LICENSE.html', 'ECDICT-LICENSE.txt', 'WORDSET-LICENSE.txt')
 
 def selected(root):
     for name in FILES:

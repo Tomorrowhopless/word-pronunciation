@@ -53,7 +53,7 @@
       "sourceRecord": "vendor/piper/provenance.json",
       "buildRecipe": "vendor/piper/BUILD-SOURCE.md",
       "embeddedEngineExactRevisionVerified": false,
-      "provenanceLimit": "Upstream recipe pins Emscripten 3.1.47 but shallow-clones espeak/piper-phonemize without pinned source commits; exact engine source revision not asserted."
+      "provenanceLimit": "Publisher recipe shallow clones default branches, whose last commits precede July 5 2024 publication and remain unchanged. Piper CMake explicitly pins eSpeak engine 0f65aa301e0d6bae5e172cc74197d32a6182200f. Original JS/WASM/data match publisher commit hashes; 327 source lang/voice files match packed data byte-for-byte. 167 compiled data entries and WASM have not been rebuilt; no bit-for-bit reproducibility claim."
     },
     "onnxruntime-web": {
       "version": "1.22.0-dev.20250409-89f8206ba4",
@@ -67,8 +67,8 @@
   "runtime_files": [
     {
       "file": "vendor/piper/BUILD-SOURCE.md",
-      "bytes": 2057,
-      "sha256": "f840820a5733d096abe5ce5e526b1a74aa84ba6f47fbe96faf13606b91e106a3"
+      "bytes": 3367,
+      "sha256": "34e3d4b70f27190beec7af37f812b51fd78d8746fc80f2575a822e3d2ee6ab6c"
     },
     {
       "file": "vendor/piper/EMSCRIPTEN-LICENSE.txt",
@@ -82,8 +82,8 @@
     },
     {
       "file": "vendor/piper/NOTICE.txt",
-      "bytes": 815,
-      "sha256": "2a35bdb6f221037b30eb9ddd542548d4483dd63c4a379abfe0b5806da47d5b5c"
+      "bytes": 1238,
+      "sha256": "f0e7848ed4bff5620f12ba86e9e18bfeb2b3d10229fb9737515da4274d1c618c"
     },
     {
       "file": "vendor/piper/PIPER-PHONEMIZE-LICENSE.txt",
@@ -112,8 +112,8 @@
     },
     {
       "file": "vendor/piper/provenance.json",
-      "bytes": 3011,
-      "sha256": "c32c063bab6a5b01fe2cd99f3f851f0ec184e22890df16e6587133aa24b35797"
+      "bytes": 4299,
+      "sha256": "d81608588eb5a3790b52c74613696c8f72bca77cd13e16e431ef3c81af08b9af"
     },
     {
       "file": "vendor/onnx/ort.wasm.min.mjs",
@@ -136,5 +136,13 @@
     "sampleRate": 22050,
     "durationSeconds": 2.7374149659863947,
     "selection": "User explicitly selected this existing sample. Settings play its exact bytes; word lookup uses the same model."
+  },
+  "phonemizerCorrespondingSource": {
+    "url": "https://github.com/Tomorrowhopless/wordworkshop/releases/download/v4.7.0/phonemizer-source-4.7.0.tar.gz",
+    "bytes": 42312431,
+    "sha256": "f50fcf0263cd142064ea494959a297703f37d3cd610dbacb89603178ecd03e1b",
+    "contents": "Complete fixed Piper wrapper, eSpeak engine source, eSpeak dictionary/voice source, original licenses, upstream recipe, fixed build adaptation, source-file byte-match evidence, modified ESM JS source",
+    "directDataFileMatches": 327,
+    "compiledDataEntriesNotRebuilt": 167
   }
 }

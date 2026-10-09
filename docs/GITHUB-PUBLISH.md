@@ -25,7 +25,7 @@ npm run release:package
 
 1. 确认目标 GitHub 仓库、公开性及版本号，再提交源码和 tag；首次提交前检查 `git status --short`，不要强行添加被忽略的大资源或本机记录。
 2. 仓库 Settings → Pages → Build and deployment 选择 **GitHub Actions**。
-3. 创建该版本的 **Draft Release**，上传上述完整 ZIP 和 SHA256 两个资产；确认上传完成后再发布 Release。
+3. 创建该版本的 **Draft Release**，上传完整 ZIP、ZIP 的 SHA256、`phonemizer-source-4.7.0.tar.gz` 与源码归档的 SHA256；确认四个资产上传完成后再发布 Release。音素前端源码归档及固定构建说明的来源记录见 `vendor/piper/provenance.json`，必须与二进制一同保留。
 4. `publish.yml` 在 Release published 时执行，也可从 Actions 手动输入已有 Release tag 重跑。流程通过 GitHub CLI 下载完整资产、核对 SHA256、检查解压路径及站点大小，然后发布 Pages。
 5. Pages 输出根目录保留资源相对路径，入口跳转 `./web/`。网页通过 `../data/`、`../models/`、`../vendor/` 和根模块访问同源资源，不在用户浏览器中跨域下载 Release 模型。
 

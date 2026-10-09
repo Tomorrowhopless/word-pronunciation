@@ -17,10 +17,11 @@
 <h2>逐句中文与本机模型</h2>
 <p>每条英文释义与例句下方添加中文对照，英文保持原样。精确匹配的内置核对译文见 reviewed-translations.js，它们是相应 Wordset/Wiktionary 内容的中文改编，按 CC BY-SA 4.0 提供；其余译文由本机模型生成，并标明“本机机器翻译”。</p>
 <p>自带模型为 <a href="https://huggingface.co/onnx-community/opus-mt-en-zh">ONNX Community 的 opus-mt-en-zh</a>，固定版本 4dc37afc6deb160f4c9048260d48019ee497658e（CC BY 4.0），量化权重保持原样。原模型来自 Helsinki-NLP，原模型卡声明 Apache 2.0。归属、原模型卡、许可和文件哈希保留在 models/。运行库 Transformers.js 3.8.1 为 Apache 2.0、ONNX Runtime 为 MIT，许可与第三方通知保留在 vendor/。</p>
-<p>英汉模型仅加载插件本地资源，远端模型加载关闭；也可复用浏览器已经可用的本机语言包。最多保留 500 条句子译文（上限 1 MiB）在本地存储中，机器翻译可能不够自然，应结合英文理解。</p>
+<p>插件从自身资源加载英汉模型，也可复用浏览器已经可用的本机语言包。网页版从同一站点下载词库与模型后在本机计算，托管平台会收到普通资源请求；不承诺完整断网可用。第三方远端模型加载关闭。最多保留 500 条句子译文（上限 1 MiB）在本地存储中，机器翻译可能不够自然，应结合英文理解。</p>
 <h2>本机朗读</h2>
 <p>默认朗读使用插件自带的 <a href="https://huggingface.co/rhasspy/piper-voices/tree/c10ece1aade47bb51c153c893d14e5bf8e5b7117">Piper Cori high 英式模型</a>在本机生成 WAV 并播放。仓库声明 MIT，所选 Cori 模型卡声明 LibriVox 数据集为 public domain；原声明、模型卡、固定版本及文件哈希保留在 models/piper-en/ 和 models/speech-model-info.json。</p>
 <p>ONNX Runtime 为 MIT。Piper 音素前端包声明 MIT，内嵌 eSpeak NG 引擎适用 GNU GPL v3 或更高版本；Emscripten 为 MIT / UIUC，uni-algo 为 MIT。完整许可、源码链接、原构建说明及预编译引擎来源边界见 vendor/piper/ 和 models/NOTICE.md。以上组件按各自许可保留，原程序的 MIT 许可不覆盖第三方组件。</p>
+<p>Piper/eSpeak 固定源码、构建脚本与核对记录另随 Release 提供：<a href="https://github.com/Tomorrowhopless/wordworkshop/releases/download/v4.7.0/phonemizer-source-4.7.0.tar.gz">下载音素前端源码归档</a>。版本、SHA256 与未重建边界见 vendor/piper/provenance.json。</p>
 <p>声音固定为 Cori 英式，所有旧偏好首次迁移为 Cori 1 倍速；保存 cori-reference-v1 后可调整查词速度。设置试听播放用户指定的 assets/piper-gb-demo.wav 原文件（Apple. Dictionary. Education.），始终原速；查词使用同一 Cori 模型生成，不调用系统 TTS 或切换其他声音。生成音频的缓存只留在内存中（最多 32 条、8 MiB）。查询词、最近查询、音色偏好和最近朗读状态只存储在各浏览器的本地扩展存储中；运行代码不调用在线查词、翻译或语音服务。</p>
 <p>词库不是 Oxford 官方词典。部分词没有音标或例句，释义也不保证使用受控基础英语。系统音量及输出设备仍会影响实际听到的声音。</p>
 </body></html>

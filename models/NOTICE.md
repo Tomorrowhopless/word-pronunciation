@@ -8,7 +8,7 @@ Transformers.js 3.8.1 为 Apache 2.0（vendor/transformers/LICENSE）；ONNX Run
 
 ## 自带离线英语朗读
 
-4.6.0 只使用 Piper 的英式 Cori high 模型，权重、配置及原始模型卡保持原样。来源：https://huggingface.co/rhasspy/piper-voices/tree/c10ece1aade47bb51c153c893d14e5bf8e5b7117 ，固定版本、各文件大小与 SHA256 见 speech-model-info.json。
+从 4.6.0 起只使用 Piper 的英式 Cori high 模型，权重、配置及原始模型卡保持原样。来源：https://huggingface.co/rhasspy/piper-voices/tree/c10ece1aade47bb51c153c893d14e5bf8e5b7117 ，固定版本、各文件大小与 SHA256 见 speech-model-info.json。
 
 仓库在 README 的元数据中声明 MIT，原声明完整保留在 piper-en/REPOSITORY-CARD.md；未为模型编造额外版权持有人。保留 piper-en/gb/MODEL_CARD；它声明 LibriVox 数据集属于 public domain，这不代表仓库所有音色的数据都适用相同许可。正式使用的 Cori 模型为 114,219,352 字节。“high”为来源的模型配置标签，听感仍需要试听判断。
 
@@ -18,4 +18,6 @@ Transformers.js 3.8.1 为 Apache 2.0（vendor/transformers/LICENSE）；ONNX Run
 
 音素前端使用 @diffusionstudio/piper-wasm 1.0.0（发布者源码 69522c832bd52d7c16389e9a8aee568065027689），仅在原 JS 末尾加入 ESM 导出；WASM 和音素数据不变。包声明 MIT，Piper-phonemize 为 MIT，内嵌 eSpeak NG 适用 GNU GPL v3 或更高版本。Emscripten 为 MIT / UIUC，uni-algo 为 MIT。不能将整个前端描述为 MIT。许可全文、源码链接、原构建步骤、哈希和本地改动保留在 vendor/piper/。
 
-来源边界：发布者步骤固定 Emscripten 3.1.47，但浅克隆引擎源码未固定提交，因此未宣称已核实预编译引擎的精确 C++ 源码版本或能逐字节重建。见 vendor/piper/provenance.json 和 BUILD-SOURCE.md。模型、前端与声音仅从插件自身资源加载，不调用网络语音服务。原项目 MIT 许可不替代第三方组件各自的许可。
+Release 同时提供 phonemizer-source-4.7.0.tar.gz，内含固定 Piper 包装层 cfff8e52ebaea37c7e953ae2d06b174acb827ac4、其 CMake 指定的 eSpeak 引擎 0f65aa301e0d6bae5e172cc74197d32a6182200f、数据源码 8593723f10cfd9befd50de447f14bf0a9d2a14a4、许可、构建脚本和核对证据。两个默认分支的最后提交均早于发布者构建且之后未变；327 个原始语言/声音文件与打包数据逐字节匹配。167 个生成数据文件和 WASM 未在本机重建，不宣称逐字节复现。详细来源边界、下载链接和归档哈希见 vendor/piper/provenance.json 和 BUILD-SOURCE.md。
+
+插件从自身资源加载模型，网页版从同一站点下载资源后在本机计算，均不调用网络语音服务。原项目 MIT 许可不替代第三方组件各自的许可。

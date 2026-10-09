@@ -1,0 +1,24 @@
+.DS_Store
+node_modules/
+dist/
+_site/
+release-assets/
+test-results/
+__pycache__/
+*.pyc
+*.zip
+*.zip.sha256
+# Generated offline assets are distributed in the complete Release ZIP.
+data/*.json.gz
+data/zh/*.json.gz
+*.onnx
+*.wasm
+*.data
+vendor/transformers/transformers.min.js
+vendor/onnx/*.mjs
+vendor/piper/phonemize.js
+# Local verification may contain private machine paths; never publish it.
+browser-verification.json
+verification.json
+PRODUCT.md
+models/opus-mt-en-zh/tokenizer.json

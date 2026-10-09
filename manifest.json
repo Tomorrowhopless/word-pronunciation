@@ -1,0 +1,56 @@
+{
+  "manifest_version": 3,
+  "name": "WordWorkshop",
+  "homepage_url": "https://github.com/atishmish/dictionary_browser_extension",
+  "version": "4.7.0",
+  "description": "离线英语词典：中文释义、逐句中文对照、本机英语朗读。",
+  "icons": {
+    "64": "assets/icon_book_64.png"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "offscreen"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'; connect-src 'self';"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "speech-client.js",
+        "reviewed-translations.js",
+        "translation-client.js",
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "64": "assets/icon_book_64.png"
+    },
+    "default_popup": "browserAction/index.html",
+    "default_title": "WordWorkshop"
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S"
+      },
+      "description": "search dictionary for selected keyword"
+    }
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "repository": "rhasspy/piper-voices",
+  "revision": "c10ece1aade47bb51c153c893d14e5bf8e5b7117",
+  "license": "MIT (repository declaration; see preserved REPOSITORY-CARD.md)",
+  "voices": [
+    {
+      "voiceName": "Piper Cori",
+      "language": "en-GB",
+      "quality": "high",
+      "sampleRate": 22050,
+      "model": "models/piper-en/gb/en_GB-cori-high.onnx",
+      "modelCard": "models/piper-en/gb/MODEL_CARD",
+      "dataset": "LibriVox",
+      "datasetLicense": "public domain (model card declaration)"
+    }
+  ],
+  "files": [
+    {
+      "file": "models/piper-en/gb/en_GB-cori-high.onnx",
+      "bytes": 114219352,
+      "sha256": "470b4dd634c98f8a4850d7626ffc3dfc90774628eeef6605a6dd8f88f30a5903"
+    },
+    {
+      "file": "models/piper-en/gb/en_GB-cori-high.onnx.json",
+      "bytes": 4963,
+      "sha256": "9e7fb5b5671612c22f3c81cbe46c1ae87b031a4632bcb509e499dad6f1e2adec"
+    },
+    {
+      "file": "models/piper-en/gb/MODEL_CARD",
+      "bytes": 468,
+      "sha256": "136e7bd168b6c35b4a5df01a0253297e5773b5775ceae0af5160f264aa58208f"
+    },
+    {
+      "file": "models/piper-en/REPOSITORY-CARD.md",
+      "bytes": 497,
+      "sha256": "33e93643fce5180886300f9f0070eeeab8af148efb8e84361f8904def80fd9fb"
+    },
+    {
+      "file": "assets/piper-gb-demo.wav",
+      "bytes": 120764,
+      "sha256": "2cd9357341e2e327d590589274421e0156deb452813ed6a42c42944d4099a67d"
+    }
+  ],
+  "runtime": {
+    "piperFrontend": {
+      "package": "@diffusionstudio/piper-wasm",
+      "version": "1.0.0",
+      "gitHead": "69522c832bd52d7c16389e9a8aee568065027689",
+      "npmTarball": "https://registry.npmjs.org/@diffusionstudio/piper-wasm/-/piper-wasm-1.0.0.tgz",
+      "npmTarballSha256": "e5be7f15b3ec42b09fca3616db2ce3e2cf83faacc9c291c400ccf48a9d85c803",
+      "wrapperLicense": "MIT (package declaration)",
+      "embeddedEngineLicense": "GNU GPL v3 or later; see vendor/piper/ESPEAK-NG-COPYING.txt",
+      "sourceRecord": "vendor/piper/provenance.json",
+      "buildRecipe": "vendor/piper/BUILD-SOURCE.md",
+      "embeddedEngineExactRevisionVerified": false,
+      "provenanceLimit": "Upstream recipe pins Emscripten 3.1.47 but shallow-clones espeak/piper-phonemize without pinned source commits; exact engine source revision not asserted."
+    },
+    "onnxruntime-web": {
+      "version": "1.22.0-dev.20250409-89f8206ba4",
+      "npmTarball": "https://registry.npmjs.org/onnxruntime-web/-/onnxruntime-web-1.22.0-dev.20250409-89f8206ba4.tgz",
+      "npmIntegrity": "sha512-0uS76OPgH0hWCPrFKlL8kYVV7ckM7t/36HfbgoFw6Nd0CZVVbQC4PkrR8mBX8LtNUFZO25IQBqV2Hx2ho3FlbQ==",
+      "license": "MIT",
+      "newFile": "vendor/onnx/ort.wasm.min.mjs",
+      "sharedWasmResources": "Existing matching ORT jsep mjs/wasm and licenses listed in models/model-info.json; unchanged npm assets"
+    }
+  },
+  "runtime_files": [
+    {
+      "file": "vendor/piper/BUILD-SOURCE.md",
+      "bytes": 2057,
+      "sha256": "f840820a5733d096abe5ce5e526b1a74aa84ba6f47fbe96faf13606b91e106a3"
+    },
+    {
+      "file": "vendor/piper/EMSCRIPTEN-LICENSE.txt",
+      "bytes": 5093,
+      "sha256": "620a78084fc7ca97c0b5dea9abf891f3ffcadfdbf305276f099c9c4e12fc1d86"
+    },
+    {
+      "file": "vendor/piper/ESPEAK-NG-COPYING.txt",
+      "bytes": 35147,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "file": "vendor/piper/NOTICE.txt",
+      "bytes": 815,
+      "sha256": "2a35bdb6f221037b30eb9ddd542548d4483dd63c4a379abfe0b5806da47d5b5c"
+    },
+    {
+      "file": "vendor/piper/PIPER-PHONEMIZE-LICENSE.txt",
+      "bytes": 1071,
+      "sha256": "13746d509d74e55ea2265fbef204bb7cdbf84a8315b0207e988326cb54387028"
+    },
+    {
+      "file": "vendor/piper/UNI-ALGO-LICENSE.txt",
+      "bytes": 2208,
+      "sha256": "c55648b02873556d6ab2de14938998101fda3a0f293337542af9196435def318"
+    },
+    {
+      "file": "vendor/piper/phonemize.js",
+      "bytes": 120752,
+      "sha256": "e7a60b1651333fe4fe3d2a9738cd0ab11d6c963f3029744b9a106d0cde5c8b88"
+    },
+    {
+      "file": "vendor/piper/piper_phonemize.data",
+      "bytes": 18077249,
+      "sha256": "29f1025eb23a5b5c192cd14a6efbce4509402ff265405072ee6f7d1a09b78f8c"
+    },
+    {
+      "file": "vendor/piper/piper_phonemize.wasm",
+      "bytes": 635212,
+      "sha256": "b777cd107a91d2bcc6a1ea46f2c26a662a7407394fe84589198aeaa83dd7a9d6"
+    },
+    {
+      "file": "vendor/piper/provenance.json",
+      "bytes": 3011,
+      "sha256": "c32c063bab6a5b01fe2cd99f3f851f0ec184e22890df16e6587133aa24b35797"
+    },
+    {
+      "file": "vendor/onnx/ort.wasm.min.mjs",
+      "bytes": 48008,
+      "sha256": "0cb5ac5be2c414d5b9e361f857108630c6d6e24a5ab9be3cf5f761de55289e94"
+    }
+  ],
+  "localChanges": [
+    "Model/config/dataset cards and ORT wasm module are unchanged upstream assets.",
+    "Piper phonemize JS has an appended ESM export; underlying WASM/data unchanged.",
+    "Project adapter uses configuration-specific phoneme IDs and VITS tensor inputs, then writes mono PCM16 WAV.",
+    "All model/frontend/runtime URLs resolve to extension-local files; no remote fallback or server required."
+  ],
+  "qualityLimit": "The user selected the Cori reference sample. Settings playback uses that unchanged file. Arbitrary words use the same Cori model; perceived quality for other text and current installed-extension reload remain unverified.",
+  "referenceAudio": {
+    "file": "assets/piper-gb-demo.wav",
+    "voiceName": "Piper Cori",
+    "rate": 1,
+    "text": "Apple. Dictionary. Education.",
+    "sampleRate": 22050,
+    "durationSeconds": 2.7374149659863947,
+    "selection": "User explicitly selected this existing sample. Settings play its exact bytes; word lookup uses the same model."
+  }
+}

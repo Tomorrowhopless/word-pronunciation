@@ -1,0 +1,274 @@
+/* Dictionary Extension — inline tooltip styles.
+   All class names prefixed with dict-ext- to avoid host page CSS conflicts.
+   CSS variables scoped to .dict-ext-tooltip since content scripts can't own :root. */
+
+.dict-ext-tooltip {
+  /* Light — colorhunt.co/palette/f4f0e444a194537d96ec8f8d */
+  --dext-bg:           #F4F0E4;   /* warm cream */
+  --dext-bg-header:    #EAE5D3;   /* slightly darker cream */
+  --dext-text:         #2C3A38;   /* deep teal-dark */
+  --dext-text-sec:     #4A5E5B;   /* muted teal-grey */
+  --dext-text-muted:   #7A9896;   /* lighter teal-grey */
+  --dext-accent:       #44A194;   /* palette teal */
+  --dext-accent-soft:  rgba(68, 161, 148, 0.09);
+  --dext-accent-ring:  rgba(68, 161, 148, 0.18);
+  --dext-accent-2:     #537D96;   /* palette steel blue — etymology */
+  --dext-border:       #C8C2B0;   /* warm grey-tan */
+  --dext-border-light: #DDD8C8;   /* lighter warm */
+  --dext-link:         #44A194;
+  --dext-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+
+  position: absolute;
+  z-index: 2147483647;
+  width: 320px;
+  background: var(--dext-bg);
+  border: 1px solid var(--dext-border);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(44, 58, 56, 0.12), 0 1px 3px rgba(44, 58, 56, 0.07);
+  font-family: var(--dext-font);
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--dext-text);
+  overflow: hidden;
+  text-align: left;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Dark theme override */
+.dict-ext-tooltip.dark-theme {
+  --dext-bg:           #1A2B2E;   /* deep teal-navy */
+  --dext-bg-header:    #1F3338;   /* dark teal surface */
+  --dext-text:         #E8E2D8;   /* warm cream light */
+  --dext-text-sec:     #B8CECC;   /* muted teal-light */
+  --dext-text-muted:   #6B8B88;   /* grey-teal muted */
+  --dext-accent:       #44A194;   /* teal */
+  --dext-accent-soft:  rgba(68, 161, 148, 0.12);
+  --dext-accent-ring:  rgba(68, 161, 148, 0.25);
+  --dext-accent-2:     #6899B0;   /* lighter steel blue for dark bg */
+  --dext-border:       #2E4449;   /* subtle teal border */
+  --dext-border-light: #243C41;   /* very subtle */
+  --dext-link:         #44A194;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35), 0 1px 3px rgba(0, 0, 0, 0.20);
+}
+
+/* --- Stem notice --- */
+.dict-ext-stem-notice {
+  padding: 5px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--dext-accent);
+  background: var(--dext-bg-header);
+  border-bottom: 1px solid var(--dext-border-light);
+  letter-spacing: 0.1px;
+}
+
+/* --- Header --- */
+.dict-ext-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 11px 14px 9px;
+  background: var(--dext-bg-header);
+  border-bottom: 1px solid var(--dext-border-light);
+}
+
+/* Hero word */
+.dict-ext-word {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--dext-text);
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+}
+
+/* POS pill badge */
+.dict-ext-pos {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--dext-accent);
+  background: var(--dext-accent-soft);
+  border: 1px solid var(--dext-accent-ring);
+  border-radius: 99px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  line-height: 1.6;
+}
+
+/* --- Pronunciation card --- */
+.dict-ext-pronunciation {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  background: var(--dext-accent-soft);
+  border-bottom: 1px solid var(--dext-accent-ring);
+}
+
+.dict-ext-ipa {
+  flex: 1;
+  font-size: 12px;
+  font-family: 'Arial Unicode MS', 'Arial', sans-serif;
+  color: var(--dext-text-sec);
+  letter-spacing: 0.3px;
+}
+
+.dict-ext-pronunciation { flex-wrap: wrap; }
+.dict-ext-speech-notice:not(:empty) {
+  flex-basis: 100%;
+  font-size: 0.75rem;
+  color: var(--dext-text-sec);
+  overflow-wrap: anywhere;
+}
+
+.dict-ext-speak-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--dext-accent-ring);
+  cursor: pointer;
+  color: var(--dext-accent);
+  flex-shrink: 0;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+
+.dict-ext-speak-btn:hover {
+  background: var(--dext-accent);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* --- Etymology (left-border, steel blue accent) --- */
+.dict-ext-etymology {
+  padding: 6px 12px 6px 11px;
+  font-size: 11px;
+  font-style: italic;
+  color: var(--dext-text-sec);
+  border-left: 3px solid var(--dext-accent-2);
+  background: rgba(83, 125, 150, 0.07);
+  border-bottom: 1px solid var(--dext-border-light);
+  line-height: 1.5;
+}
+
+/* --- Definitions --- */
+.dict-ext-defs {
+  margin: 0;
+  padding: 10px 14px 10px 32px;
+  list-style: decimal;
+}
+
+.dict-ext-def {
+  padding: 2px 0;
+  color: var(--dext-text-sec);
+  line-height: 1.65;
+}
+
+.dict-ext-def::marker {
+  color: var(--dext-text-muted);
+  font-size: 10px;
+}
+
+.dict-ext-example {
+  margin-top: 2px;
+  font-style: italic;
+  color: var(--dext-text-muted);
+  font-size: 11.5px;
+  line-height: 1.5;
+}
+
+/* --- Footer --- */
+.dict-ext-footer {
+  padding: 7px 14px 9px;
+  border-top: 1px solid var(--dext-border-light);
+}
+
+.dict-ext-link {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--dext-text-muted);
+  text-decoration: none;
+  padding: 2px 5px;
+  border-radius: 4px;
+  transition: color 0.15s, background 0.15s;
+}
+
+.dict-ext-link:hover {
+  color: var(--dext-accent);
+  background: var(--dext-accent-soft);
+}
+
+/* --- Not found / suggestions --- */
+.dict-ext-notfound {
+  padding: 14px;
+  font-size: 12.5px;
+  color: var(--dext-text-muted);
+  line-height: 1.6;
+}
+
+.dict-ext-suggestions {
+  padding: 4px 14px 10px;
+  font-size: 11px;
+  color: var(--dext-text-muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.dict-ext-suggestion {
+  display: inline-block;
+  padding: 3px 10px;
+  border: 1px solid var(--dext-accent-ring);
+  border-radius: 99px;
+  background: var(--dext-accent-soft);
+  color: var(--dext-accent);
+  font-family: var(--dext-font);
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+
+.dict-ext-suggestion:hover {
+  background: var(--dext-accent);
+  color: #fff;
+  border-color: var(--dext-accent);
+  box-shadow: 0 2px 6px var(--dext-accent-ring);
+}
+
+.dict-ext-tooltip{width:360px;max-width:calc(100vw - 16px);max-height:min(520px,calc(100vh - 16px));overflow-y:auto;font-size:14px;isolation:isolate}
+.dict-ext-tooltip,.dict-ext-tooltip *{box-sizing:border-box}
+.dict-ext-tooltip{--dext-text-muted:#526965;--dext-link:#23776b}
+.dict-ext-tooltip.dark-theme{--dext-text-muted:#aac4bb;--dext-link:#78d7bc}
+.dict-ext-chinese{padding:14px;white-space:pre-line;line-height:1.7;color:var(--dext-text);font-size:14px;overflow-wrap:anywhere;border-bottom:1px solid var(--dext-border)}
+.dict-ext-chinese strong{display:block;font-size:12px;color:var(--dext-text-sec);margin-bottom:6px}
+.dict-ext-def{overflow-wrap:anywhere}
+.dict-ext-example{color:var(--dext-text-sec);font-size:12.5px}
+.dict-ext-speak-btn{width:32px;height:32px;position:relative;flex-shrink:0}
+.dict-ext-speak-btn svg{position:static!important;display:block!important;width:14px!important;height:14px!important;transform:none!important;margin:0!important;fill:none!important}
+.dict-ext-speak-btn.speaking{background:var(--dext-accent);color:var(--dext-bg)}
+.dict-ext-etymology-details{padding:8px 14px;border-top:1px solid var(--dext-border);color:var(--dext-text-sec);font-size:12px}
+.dict-ext-etymology-details summary{cursor:pointer}
+.dict-ext-etymology{border:0;background:transparent;padding:6px 0;margin:0;overflow-wrap:anywhere}
+@media(prefers-reduced-motion:reduce){.dict-ext-tooltip *{transition:none!important}}
+.dict-ext-definition-zh,.dict-ext-example-zh{font-style:normal;color:var(--dext-text);font-size:14px;line-height:1.7;white-space:pre-line;overflow-wrap:anywhere}
+.dict-ext-definition-zh{margin:4px 0 8px}
+.dict-ext-example-zh{margin:3px 0 12px;color:var(--dext-text-sec)}
+.dict-ext-translation-notice{font-size:12px;color:var(--dext-text-sec);line-height:1.6;margin:5px 14px 10px}
+.dict-ext-translation-notice:empty{display:none}
+.dict-ext-translate-button{font:inherit;font-size:13px;background:var(--dext-accent-soft);color:var(--dext-text);border:1px solid var(--dext-accent);border-radius:6px;padding:6px 10px;margin:8px 14px;cursor:pointer}
+.dict-ext-translate-button[hidden]{display:none}
+.dict-ext-translate-button:disabled{opacity:.7;cursor:wait}
+.dict-ext-translate-button:focus-visible{outline:2px solid var(--dext-accent);outline-offset:2px}

@@ -1,0 +1,56 @@
+name: Publish offline dictionary to Pages
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Existing release tag (must contain ZIP and SHA256 assets)'
+        required: true
+        type: string
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download complete offline release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ inputs.tag || github.event.release.tag_name }}
+        run: |
+          mkdir release-assets
+          gh release download "$RELEASE_TAG" --pattern 'wordworkshop-*.zip' --pattern 'wordworkshop-*.zip.sha256' --dir release-assets
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib
+          archives = list(Path('release-assets').glob('*.zip'))
+          if len(archives) != 1:
+              raise SystemExit('Expected exactly one offline ZIP')
+          archive = archives[0]
+          expected = archive.with_suffix('.zip.sha256').read_text().split()[0]
+          if hashlib.file_digest(archive.open('rb'), 'sha256').hexdigest() != expected:
+              raise SystemExit('Release SHA256 mismatch')
+          Path('release-assets/archive-path').write_text(str(archive))
+          PY
+          python scripts/package-release.py --pages-from "$(cat release-assets/archive-path)" --pages-output _site
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Deploy
+        id: deploy
+        uses: actions/deploy-pages@v4

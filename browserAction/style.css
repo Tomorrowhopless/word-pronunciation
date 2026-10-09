@@ -1,0 +1,389 @@
+/* --- Theme variables --- */
+:root {
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui,
+          sans-serif;
+
+  /* Light — colorhunt.co/palette/f4f0e444a194537d96ec8f8d */
+  --bg:           #F4F0E4;   /* warm cream */
+  --bg-alt:       #EAE5D3;   /* slightly darker cream */
+  --bg-input:     #FDFAF2;   /* near-white warm */
+  --text:         #2C3A38;   /* deep teal-dark */
+  --text-sec:     #4A5E5B;   /* muted teal-grey */
+  --text-muted:   #7A9896;   /* lighter teal-grey */
+  --accent:       #44A194;   /* palette teal */
+  --accent-hover: #37897E;   /* teal hover */
+  --accent-soft:  rgba(68, 161, 148, 0.09);
+  --accent-ring:  rgba(68, 161, 148, 0.18);
+  --accent-2:     #537D96;   /* palette steel blue — etymology, secondary */
+  --border:       #C8C2B0;   /* warm grey-tan */
+  --border-light: #DDD8C8;   /* lighter warm */
+  --error:        #C45A58;   /* dark salmon (readable on cream) */
+  --link:         #44A194;
+  --shadow:       0 1px 3px rgba(44, 58, 56, 0.10);
+  --shadow-md:    0 4px 16px rgba(44, 58, 56, 0.10);
+}
+
+[data-theme="dark"] {
+  --bg:           #1A2B2E;   /* deep teal-navy */
+  --bg-alt:       #1F3338;   /* dark teal surface */
+  --bg-input:     #1F3338;
+  --text:         #E8E2D8;   /* warm cream light */
+  --text-sec:     #B8CECC;   /* muted teal-light */
+  --text-muted:   #6B8B88;   /* grey-teal muted */
+  --accent:       #44A194;   /* teal (good contrast on dark bg) */
+  --accent-hover: #5BBFB3;   /* lighter teal hover */
+  --accent-soft:  rgba(68, 161, 148, 0.12);
+  --accent-ring:  rgba(68, 161, 148, 0.25);
+  --accent-2:     #6899B0;   /* lighter steel blue for dark bg */
+  --border:       #2E4449;   /* subtle teal border */
+  --border-light: #243C41;   /* very subtle */
+  --error:        #EC8F8D;   /* palette salmon */
+  --link:         #44A194;
+  --shadow:       0 1px 3px rgba(0, 0, 0, 0.30);
+  --shadow-md:    0 4px 16px rgba(0, 0, 0, 0.28);
+}
+
+/* --- Base --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 380px;
+  font-family: var(--font);
+  font-size: 13px;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* --- Search bar --- */
+.search-container {
+  padding: 13px 14px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+
+#search {
+  width: 100%;
+  padding: 9px 12px;
+  font-size: 13px;
+  font-family: var(--font);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  outline: none;
+  background: var(--bg-input);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#search:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-ring);
+}
+
+#search::placeholder {
+  color: var(--text-muted);
+}
+
+/* --- Result area --- */
+.result {
+  padding: 16px 16px 14px;
+  overflow-y: auto;
+  max-height: 480px;
+}
+
+/* --- Stem notice (pill badge) --- */
+.stem-notice {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  margin-bottom: 12px;
+  font-size: 11px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 99px;
+  border: 1px solid var(--accent-ring);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+/* --- Word header --- */
+.word-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+/* Hero word */
+.keyword {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+}
+
+/* POS pill badge */
+.pos {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 9px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-ring);
+  border-radius: 99px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  line-height: 1.6;
+}
+
+/* --- Pronunciation card --- */
+.pronunciation {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-ring);
+  border-radius: 8px;
+}
+
+.ipa {
+  flex: 1;
+  font-size: 13px;
+  font-family: 'Arial Unicode MS', 'Arial', sans-serif;
+  color: var(--text-sec);
+  letter-spacing: 0.3px;
+}
+
+#speech-notice:not(:empty) {
+  flex-basis: 100%;
+  font-size: 0.75rem;
+  color: var(--text-sec);
+  overflow-wrap: anywhere;
+}
+
+.pronunciation { flex-wrap: wrap; }
+
+.etymology a { color: var(--link); }
+
+.speak-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--accent-ring);
+  cursor: pointer;
+  color: var(--accent);
+  flex-shrink: 0;
+  transition: background 0.2s, color 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+
+.speak-btn:hover,
+.speak-btn.speaking {
+  background: var(--accent);
+  color: #fff;
+  transform: scale(1.08);
+  box-shadow: 0 0 0 4px var(--accent-ring);
+}
+
+.speak-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* --- Etymology (left-border blockquote, steel blue accent) --- */
+.etymology {
+  font-size: 11.5px;
+  font-style: italic;
+  color: var(--text-sec);
+  padding: 6px 10px;
+  margin-bottom: 12px;
+  border-left: 3px solid var(--accent-2);
+  background: rgba(83, 125, 150, 0.07);
+  border-radius: 0 6px 6px 0;
+  line-height: 1.6;
+}
+
+/* --- Definitions --- */
+.text-result {
+  line-height: 1.65;
+}
+
+/* Section POS label (left-border, full-width) */
+.section-pos {
+  display: flex;
+  align-items: center;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  color: var(--accent);
+  margin-top: 14px;
+  margin-bottom: 6px;
+  padding-left: 8px;
+  border-left: 3px solid var(--accent);
+  line-height: 1.4;
+}
+
+.section-pos:first-child {
+  margin-top: 0;
+}
+
+.def-list {
+  margin: 2px 0 4px;
+  padding-left: 22px;
+}
+
+.def-list li {
+  padding: 3px 0;
+  color: var(--text-sec);
+  line-height: 1.7;
+}
+
+.def-list li::marker {
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.example {
+  margin-top: 2px;
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+/* Syn / ant */
+.synonyms,
+.antonyms {
+  margin-top: 5px;
+  padding: 2px 0 2px 8px;
+  font-size: 11.5px;
+  color: var(--text-muted);
+  border-left: 2px solid var(--border);
+  line-height: 1.5;
+}
+
+/* --- Footer --- */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.footer a {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 3px 7px;
+  border-radius: 5px;
+  transition: color 0.15s, background 0.15s;
+}
+
+.footer a:hover {
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* --- Empty state --- */
+.empty-state {
+  padding: 32px 20px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 12.5px;
+  line-height: 1.7;
+  letter-spacing: 0.1px;
+}
+
+/* --- Error state --- */
+.error-state {
+  padding: 28px 16px;
+  text-align: center;
+  color: var(--error);
+  font-size: 13px;
+}
+
+/* --- Suggestions --- */
+.suggestions {
+  margin-top: 10px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.suggestion-link {
+  font-family: var(--font);
+  font-size: 12px;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 4px 12px;
+  border: 1px solid var(--accent-ring);
+  border-radius: 99px;
+  background: var(--accent-soft);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.15s;
+}
+
+.suggestion-link:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  box-shadow: 0 2px 8px var(--accent-ring);
+}
+
+/* Bilingual results keep the Chinese meaning and English evidence together. */
+:root{--text-muted:#526965;--link:#23776b}
+[data-theme=dark]{--text-muted:#aac4bb;--link:#78d7bc}
+body{width:420px;font-size:14px}
+.result{max-height:490px}
+.keyword{overflow-wrap:anywhere}
+.chinese-section{padding:3px 0 15px;border-bottom:1px solid var(--border);margin-bottom:16px}
+.chinese-section h2,.english-heading{font-size:13px;font-weight:650;line-height:1.4;margin:0 0 8px;color:var(--text-sec)}
+#chinese-text{white-space:pre-line;line-height:1.75;font-size:15px;color:var(--text);overflow-wrap:anywhere}
+.source-note{font-size:11px;color:var(--text-sec);margin:5px 0 10px;line-height:1.5}
+.source-note a{color:var(--link)}
+.section-pos{border:0;padding:0;font-size:12px;letter-spacing:0;text-transform:none}
+.def-list li{font-size:14px;overflow-wrap:anywhere}
+.example{color:var(--text-sec);font-size:13px}
+.etymology-details{margin-top:16px;border-top:1px solid var(--border);padding-top:10px;font-size:13px;color:var(--text-sec)}
+.etymology-details summary{cursor:pointer;user-select:none}
+.etymology{border:0;background:transparent;padding:8px 0;margin:0;font-style:normal;font-size:12px;overflow-wrap:anywhere}
+.synonyms,.antonyms{border:0;padding:0}
+.speak-btn{width:36px;height:36px}
+.speak-btn:disabled{opacity:.55;cursor:wait}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+.definition-zh,.example-zh,.related-zh{font-style:normal;color:var(--text);font-size:14px;line-height:1.7;white-space:pre-line;overflow-wrap:anywhere}
+.definition-zh{margin:4px 0 8px}
+.example-zh{margin:3px 0 12px;color:var(--text-sec)}
+.related-zh{margin-top:3px;font-size:13px}
+.translation-notice{font-size:12px;color:var(--text-sec);line-height:1.6;margin:5px 0 10px}
+.translation-notice:empty{display:none}
+.translate-button{font:inherit;font-size:13px;background:var(--accent-soft);color:var(--text);border:1px solid var(--accent);border-radius:6px;padding:6px 10px;cursor:pointer}
+.translate-button[hidden]{display:none}
+.translate-button:disabled{opacity:.7;cursor:wait}
+.translate-button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}

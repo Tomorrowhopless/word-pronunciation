@@ -1,0 +1,207 @@
+{
+  "source": "https://github.com/skywind3000/ECDICT",
+  "sourceCommit": "bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b",
+  "sourceCsvUrl": "https://raw.githubusercontent.com/skywind3000/ECDICT/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b/ecdict.csv",
+  "sourceCsvBytes": 65933428,
+  "sourceCsvSha256": "1a6947e04785db63613a92e14903cdae7954f7e84860b10e68e5c7cbb3f9c3cf",
+  "license": "MIT",
+  "licenseFile": "ECDICT-LICENSE.txt",
+  "schema": "bucket[trimmedLowercaseWord] = {translation, phonetic, definition}",
+  "matching": "Exact trim/lowercase word matching; no sense-level or example translation alignment.",
+  "processing": "Decode escaped line breaks only. Skip empty translations. Preserve source order and wording except the documented localCorrections. Merge duplicate keys by unique translation lines and first nonempty metadata.",
+  "localCorrections": {
+    "a": {
+      "originalTranslation": "第一个字母 A; 一个; 第一的\nart. [计] 累加器, 加法器, 地址, 振幅, 模拟, 区域, 面积, 汇编, 组件, 异步",
+      "translation": "art. 一个；一位（不定冠词，用于单数可数名词前）。\nn. 英文字母 A。",
+      "note": "Local adaptation for English learning: clarify common usage and correct misleading source wording; phonetic and definition are unchanged."
+    },
+    "i": {
+      "originalTranslation": "pron. 我\n[计] 电流, 中断, 指令, 指示符",
+      "translation": "pron. 我（第一人称单数主格）。",
+      "note": "Local adaptation for English learning: clarify common usage and correct misleading source wording; phonetic and definition are unchanged."
+    },
+    "run": {
+      "originalTranslation": "n. 跑, 赛跑, 奔跑, 奔跑的路程, 趋向, 流出, 运转时间, 连续\nvi. 跑, 奔跑, 跑步, 赛跑, 竞赛, 行驶, 运转, 进行, 蔓延\nvt. 使跑, 参赛, 追究, 驾驶, 开动, 管理, 经营, 使流出, 运行\na. 熔化的, 融化的, 浇铸的\nrun的过去式和过去分词\n[计] 运行",
+      "translation": "n. 跑；赛跑；奔跑的路程；运行；连续的一段时间。\nv. 跑；奔跑；行驶；运转；运行；管理；经营。\n过去式：ran；过去分词：run。",
+      "note": "Local adaptation for English learning: clarify common usage and correct misleading source wording; phonetic and definition are unchanged."
+    }
+  },
+  "stats": {
+    "sourceRows": 770611,
+    "emptyWords": 0,
+    "emptyTranslations": 1872,
+    "duplicateRows": 0,
+    "duplicateTranslationLinesRemoved": 0,
+    "wordsWithDefinition": 159012,
+    "wordsWithPhonetic": 218065,
+    "wordsWithChineseCharacters": 767533,
+    "sourceUniqueNormalizedWords": 770611,
+    "lookupWords": 768739,
+    "compressedBytes": 21616819,
+    "uncompressedBytes": 90156073
+  },
+  "files": {
+    "a.json.gz": {
+      "words": 60416,
+      "compressedBytes": 1608418,
+      "uncompressedBytes": 6818499,
+      "sha256": "9e72b6addd54a21c064a55eeac0b805fbd1f37f06738bf907ecad49fcf1f7e6a"
+    },
+    "b.json.gz": {
+      "words": 45776,
+      "compressedBytes": 1295575,
+      "uncompressedBytes": 5281536,
+      "sha256": "728bccdc247f5196d0191a8680816192cce4b9b87ae6457fbd11bc777e0b8fd8"
+    },
+    "c.json.gz": {
+      "words": 73324,
+      "compressedBytes": 2032770,
+      "uncompressedBytes": 8649260,
+      "sha256": "e2eb3a03a3783eb1b062153ac7622a54bdeb1bf5a57a5b1b78d2bb571266728e"
+    },
+    "d.json.gz": {
+      "words": 39127,
+      "compressedBytes": 1118867,
+      "uncompressedBytes": 4680097,
+      "sha256": "f7a03c2d3920f121630fcc83b57dda5a6dafb199c863f4b5a0559f4b073507e3"
+    },
+    "e.json.gz": {
+      "words": 29569,
+      "compressedBytes": 834366,
+      "uncompressedBytes": 3501635,
+      "sha256": "f3b461098d227cade26d5b92d6ff43a86ec4c5fc5d13702ac099da4028e65016"
+    },
+    "f.json.gz": {
+      "words": 31587,
+      "compressedBytes": 874091,
+      "uncompressedBytes": 3676906,
+      "sha256": "3f348de7967dadd81adb5d453b791f418aa23039dc6d978f8e8d298564aec335"
+    },
+    "g.json.gz": {
+      "words": 28280,
+      "compressedBytes": 755282,
+      "uncompressedBytes": 3224988,
+      "sha256": "29c96cb0f91933713d039a9589b764fe7d253cdd8facc9050ac3bb8ea57bb089"
+    },
+    "h.json.gz": {
+      "words": 31028,
+      "compressedBytes": 893057,
+      "uncompressedBytes": 3656029,
+      "sha256": "4ce872e00f5acd57db913e432c169a5886557e0adb8f6f4398575b1dcdf4f927"
+    },
+    "i.json.gz": {
+      "words": 28071,
+      "compressedBytes": 766520,
+      "uncompressedBytes": 3323946,
+      "sha256": "2790638d1ac3cbc5d24055e6212da9b6a525691c47bb323eb37fd3326d4735b2"
+    },
+    "j.json.gz": {
+      "words": 6083,
+      "compressedBytes": 192898,
+      "uncompressedBytes": 741368,
+      "sha256": "c21fdb88acc5163212f10208d9fd48e671b3ff6a5289c1839e35c5a9c9e775f8"
+    },
+    "k.json.gz": {
+      "words": 9306,
+      "compressedBytes": 274035,
+      "uncompressedBytes": 1053025,
+      "sha256": "28cf2f3bad38a380e55a40920536fc5d4d5398241447c67f9ca0ab27f3d21b2e"
+    },
+    "l.json.gz": {
+      "words": 29329,
+      "compressedBytes": 802042,
+      "uncompressedBytes": 3320953,
+      "sha256": "0a7bce6ca28b2de2f25a7973005840f1b3d54825f1cbf94c4f587484da2a359f"
+    },
+    "m.json.gz": {
+      "words": 48124,
+      "compressedBytes": 1299501,
+      "uncompressedBytes": 5507812,
+      "sha256": "0e4f075b7ce091e04386129ad6e81c870c21a85900e864c46217f5d29899d7d0"
+    },
+    "n.json.gz": {
+      "words": 21267,
+      "compressedBytes": 568393,
+      "uncompressedBytes": 2378494,
+      "sha256": "ede2160a02a70ec88c71c85a6f43e62270c343498dd69cf97d79ff1d54181051"
+    },
+    "o.json.gz": {
+      "words": 21533,
+      "compressedBytes": 575113,
+      "uncompressedBytes": 2453916,
+      "sha256": "feabe07f642a1f3da8459d010dc1221268669fbe1b0b29596dfea3e1d178fde2"
+    },
+    "p.json.gz": {
+      "words": 64850,
+      "compressedBytes": 1832979,
+      "uncompressedBytes": 7641058,
+      "sha256": "bc3ac24b6276786f6476593ff42bcd8d57e144b63037ef292068d69d0ad3d26e"
+    },
+    "q.json.gz": {
+      "words": 3317,
+      "compressedBytes": 102787,
+      "uncompressedBytes": 409446,
+      "sha256": "66a26a1b2601438589982a8100523d1a392461061e4825ac2aa2a304c3792d4c"
+    },
+    "r.json.gz": {
+      "words": 33854,
+      "compressedBytes": 968409,
+      "uncompressedBytes": 4161372,
+      "sha256": "e99edd2d2753fe1e15c9e716a78f8d47b3328fe38ed92c1a81dccd688736c76c"
+    },
+    "s.json.gz": {
+      "words": 76662,
+      "compressedBytes": 2246729,
+      "uncompressedBytes": 9277007,
+      "sha256": "048eab7f9fa5a302e84db83ff0274528c3ecad15e14853082dc0e18f3ed22832"
+    },
+    "t.json.gz": {
+      "words": 40732,
+      "compressedBytes": 1174592,
+      "uncompressedBytes": 4794064,
+      "sha256": "ecf38383387b0169e2df6eafe6446f4e9bcfac0ce0f4dff95ac7b3b0b3b8df3a"
+    },
+    "u.json.gz": {
+      "words": 12849,
+      "compressedBytes": 389327,
+      "uncompressedBytes": 1577916,
+      "sha256": "691fe5f41623d057efe8298aa90cb5df94f511363c793221f3fca0beeccd88bd"
+    },
+    "v.json.gz": {
+      "words": 11824,
+      "compressedBytes": 336468,
+      "uncompressedBytes": 1390929,
+      "sha256": "7b484acd051d89f6c893b1dda94d3022b2d3e3f777a83cab8fba1446906db0ca"
+    },
+    "w.json.gz": {
+      "words": 15342,
+      "compressedBytes": 469410,
+      "uncompressedBytes": 1874745,
+      "sha256": "20ce3cb4011581aa4ac69399f8f28d263edd5004ddc349a070153ea9d988c033"
+    },
+    "x.json.gz": {
+      "words": 1135,
+      "compressedBytes": 33817,
+      "uncompressedBytes": 129055,
+      "sha256": "1873795783aad5e91d294c86425cbded2869c3cb1a60aac125cf6e46ba4decb1"
+    },
+    "y.json.gz": {
+      "words": 2112,
+      "compressedBytes": 70595,
+      "uncompressedBytes": 255840,
+      "sha256": "5d3b3ab218457ba8699f07cf80e8cdbd51745e869e524b9591f42f73c44ec6b4"
+    },
+    "z.json.gz": {
+      "words": 2649,
+      "compressedBytes": 81643,
+      "uncompressedBytes": 303289,
+      "sha256": "a624c68474ae672bcea27170f04a9141bac7b9c4af2dc5986d5cd728d9808c17"
+    },
+    "misc.json.gz": {
+      "words": 593,
+      "compressedBytes": 19135,
+      "uncompressedBytes": 72888,
+      "sha256": "7d644da511091e76d934fa317f3d2c87c8fe8b20744a75f6f51c75745d7825fd"
+    }
+  }
+}

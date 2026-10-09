@@ -1,0 +1,92 @@
+{
+  "repository": "onnx-community/opus-mt-en-zh",
+  "revision": "4dc37afc6deb160f4c9048260d48019ee497658e",
+  "dtype": "int8",
+  "license": "CC-BY-4.0",
+  "base_model": "Helsinki-NLP/opus-mt-en-zh",
+  "base_license": "Apache-2.0",
+  "files": [
+    {
+      "file": "config.json",
+      "bytes": 1520,
+      "sha256": "ed3129cecc03a7e8301def052c0f41a7ed709656dcfd68755b428ce4a0a60edc"
+    },
+    {
+      "file": "generation_config.json",
+      "bytes": 288,
+      "sha256": "9af519fb778df0d27579991a3cc759e9ce1dacbd635d9e26833b010ddf67bd11"
+    },
+    {
+      "file": "tokenizer.json",
+      "bytes": 6380952,
+      "sha256": "d0c7da27056e8f42adce9e76d8e792e5daa64e15f5acd2e7aabf0121877dd4c1"
+    },
+    {
+      "file": "tokenizer_config.json",
+      "bytes": 849,
+      "sha256": "73b9b41c98292e8d9e516ae8737dfd2e0377e67b3a2c0303e985e112ad61cd87"
+    },
+    {
+      "file": "special_tokens_map.json",
+      "bytes": 74,
+      "sha256": "5e4d1f5e759d74cb1c2fe1d165cfc62b5237aa904de759380cd6f43042eec723"
+    },
+    {
+      "file": "onnx/encoder_model_int8.onnx",
+      "bytes": 52875078,
+      "sha256": "cb02c542d2ab3010766031f3ce04e9041ffb6bd2df15caa7c41f3aead7cfe6dc"
+    },
+    {
+      "file": "onnx/decoder_model_merged_int8.onnx",
+      "bytes": 193290224,
+      "sha256": "c6fe901b5bae6235237f07ac0dfb421bf2a14aaaa02d4024bd1965be5b1d215e"
+    }
+  ],
+  "base_revision": "408d9bc410a388e1d9aef112a2daba955b945255",
+  "libraries": [
+    {
+      "name": "@huggingface/transformers",
+      "version": "3.8.1",
+      "npm_integrity": "sha512-tsTk4zVjImqdqjS8/AOZg2yNLd1z9S5v+7oUPpXaasDRwEDhB+xnglK1k5cad26lL5/ZIaeREgWWy0bs9y9pPA==",
+      "source": "https://registry.npmjs.org/@huggingface/transformers/-/transformers-3.8.1.tgz"
+    },
+    {
+      "name": "onnxruntime-web",
+      "version": "1.22.0-dev.20250409-89f8206ba4",
+      "npm_integrity": "sha512-0uS76OPgH0hWCPrFKlL8kYVV7ckM7t/36HfbgoFw6Nd0CZVVbQC4PkrR8mBX8LtNUFZO25IQBqV2Hx2ho3FlbQ==",
+      "source": "https://registry.npmjs.org/onnxruntime-web/-/onnxruntime-web-1.22.0-dev.20250409-89f8206ba4.tgz"
+    }
+  ],
+  "runtime_files": [
+    {
+      "file": "vendor/onnx/LICENSE",
+      "bytes": 1073,
+      "sha256": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c"
+    },
+    {
+      "file": "vendor/onnx/ThirdPartyNotices.txt",
+      "bytes": 326866,
+      "sha256": "e9e90971a8e75a9a8ac0c6412e29c1202d079998389915aa485f46c816c3b4cc"
+    },
+    {
+      "file": "vendor/onnx/ort-wasm-simd-threaded.jsep.mjs",
+      "bytes": 44484,
+      "sha256": "08fb86ec433c78bfb032c5d84a68b8e8e5a8d81268fa39e24314179a5767a5b9"
+    },
+    {
+      "file": "vendor/onnx/ort-wasm-simd-threaded.jsep.wasm",
+      "bytes": 21596019,
+      "sha256": "c46655e8a94afc45338d4cb2b840475f88e5012d524509916e505079c00bfa39"
+    },
+    {
+      "file": "vendor/transformers/LICENSE",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "file": "vendor/transformers/transformers.min.js",
+      "bytes": 888173,
+      "sha256": "aa5002b70e789798da263f5f99c62bd3e8fcd0c119258a493c40c180648365fa"
+    }
+  ]
+}

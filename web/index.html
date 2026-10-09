@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; connect-src 'self'; worker-src 'self'; media-src 'self' blob:; img-src 'self' data:; object-src 'none'; base-uri 'self'" />
+  <meta name="description" content="中英对照英语词典，提供中文释义、英文例句和 Cori 英式发音。也可下载 Chrome、Edge 离线插件。" />
+  <title>WordWorkshop · 中英对照词典</title>
+  <link rel="icon" href="../assets/icon_book_64.png" /><link rel="stylesheet" href="../browserAction/style.css" /><link rel="stylesheet" href="web.css" />
+</head>
+<body>
+  <a class="skip-link" href="#search">跳到查词</a>
+  <div class="page-shell">
+    <header class="site-header"><a class="brand" href="./"><img src="../assets/icon_book_64.png" alt="" width="32" height="32" /><span>WordWorkshop<small>中英对照词典</small></span></a><nav aria-label="项目链接"><a id="repository-link" href="https://github.com/Tomorrowhopless/wordworkshop" target="_blank" rel="noopener">GitHub</a><a id="download-link" class="download-link" href="https://github.com/Tomorrowhopless/wordworkshop/releases/latest" target="_blank" rel="noopener">下载离线插件 <span aria-hidden="true">↗</span></a></nav></header>
+    <main>
+      <section class="lookup-panel" aria-labelledby="lookup-title">
+        <div class="intro"><h1 id="lookup-title">读懂英文，从一个词开始</h1><p>中文释义、英文解释与例句，放在一起看。</p></div>
+        <form id="search-form" class="web-search"><label class="sr-only" for="search">英文单词或短语</label><input id="search" type="search" placeholder="输入英文单词或短语" maxlength="120" autocomplete="off" enterkeyhint="search" required /><button class="primary" type="submit">查词</button></form>
+        <div class="search-examples" aria-label="试查单词"><span>试试看</span><button type="button" data-word="apple">apple</button><button type="button" data-word="education">education</button><button type="button" data-word="electromagnetism">electromagnetism</button></div>
+        <p id="lookup-notice" class="status" role="status" aria-live="polite"></p>
+        <div id="result" class="result hidden" aria-live="polite">
+          <div id="stem-notice" class="stem-notice hidden"></div><div class="word-header"><h2 id="keyword" class="keyword"></h2><span id="pos" class="pos"></span></div>
+          <div id="pronunciation" class="pronunciation hidden"><span id="ipa" class="ipa"></span><button id="speak-btn" class="speak-btn" type="button" title="Cori 英式朗读" aria-label="Cori 英式朗读"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5zM16 8a6 6 0 0 1 0 8M19 5a10 10 0 0 1 0 14" /></svg></button><button id="stop-speech" class="text-button" type="button">停止</button><span id="speech-notice" class="status" role="status"></span></div>
+          <section id="chinese" class="chinese-section" aria-labelledby="chinese-heading"><h2 id="chinese-heading">中文释义</h2><div id="chinese-text" lang="zh-CN"></div></section>
+          <div id="text-result" class="text-result"></div><details id="etymology-details" class="etymology-details hidden"><summary>词源</summary><div id="etymology" class="etymology"></div></details>
+          <div class="footer"><a id="source-link" href="https://en.wiktionary.org/" target="_blank" rel="noopener">Wiktionary</a><a href="../DATA-LICENSE.html" target="_blank" rel="noopener">词库与许可来源</a></div>
+        </div>
+        <div id="empty-state" class="empty-state"><p>在上方输入单词，按回车开始查询。</p><p>先显示中文释义，再结合英文解释和例句理解。</p></div><div id="error-state" class="error-state hidden" role="alert"></div>
+      </section>
+      <aside class="tools" aria-label="使用说明与声音">
+        <details><summary>声音与语速</summary><p>Cori 英式声音，与离线插件一致。</p><label for="rate">查词语速</label><select id="rate"><option value="0.85">稍慢 · 0.85 倍</option><option value="1" selected>正常 · 1 倍</option><option value="1.15">稍快 · 1.15 倍</option></select><button id="preview" type="button" class="secondary">试听原音频</button><button id="stop-preview" type="button" class="text-button">停止试听</button><p id="preview-notice" class="status" role="status"></p><audio id="reference-audio" src="../assets/piper-gb-demo.wav" preload="none"></audio></details>
+        <details><summary>网页版与离线插件</summary><p>网页版打开即可查词。首次查询按需读取词库；首次朗读约下载 155 MB、逐句中文约 275 MB，请稍等；计算在你的设备上完成。</p><p>无需网络使用、在其他网页双击查词，请下载 Chrome / Edge 离线插件，解压后加载其中的 WordWorkshop 文件夹。</p></details>
+        <label class="theme-control" for="theme">外观<select id="theme"><option value="system">跟随系统</option><option value="light">浅色</option><option value="dark">深色</option></select></label>
+      </aside>
+    </main>
+    <footer class="site-footer"><span>WordWorkshop · 中英对照，让理解更进一步</span><a href="../DATA-LICENSE.html">数据来源与许可</a></footer>
+  </div>
+  <script src="storage.js"></script><script src="../reviewed-translations.js"></script><script src="../translation-client.js"></script><script src="../browserAction/util.js"></script><script type="module" src="app.js"></script>
+</body></html>

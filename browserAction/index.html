@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>WordWorkshop</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="search-container">
+      <input id="search" type="search" placeholder="输入英文单词或短语，按回车" aria-label="搜索英文单词或短语" maxlength="120" autocomplete="off" autofocus />
+    </div>
+    <div id="result" class="result hidden">
+      <div id="stem-notice" class="stem-notice hidden"></div>
+      <div class="word-header">
+        <span id="keyword" class="keyword"></span>
+        <span id="pos" class="pos"></span>
+      </div>
+      <div id="pronunciation" class="pronunciation hidden">
+        <span id="ipa" class="ipa"></span>
+        <button id="speak-btn" class="speak-btn" title="朗读英文" aria-label="朗读英文">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+        </button>
+      </div>
+      <section id="chinese" class="chinese-section" aria-labelledby="chinese-heading">
+        <h2 id="chinese-heading">中文释义</h2>
+        <div id="chinese-text" lang="zh-CN"></div>
+      </section>
+      <div id="text-result" class="text-result"></div>
+      <details id="etymology-details" class="etymology-details hidden"><summary>词源</summary><div id="etymology" class="etymology"></div></details>
+      <div class="footer">
+        <a href="#" id="source-link" target="_blank">Wiktionary</a>
+        <a href="#" id="optionsPage" target="_blank">设置 / 试听</a>
+        <a href="../DATA-LICENSE.html" target="_blank">数据来源</a>
+      </div>
+    </div>
+    <div id="empty-state" class="empty-state">
+      输入英文并按回车，或在网页上双击单词。<br />中文与英语释义均来自本地词库。
+    </div>
+    <div id="error-state" class="error-state hidden"></div>
+    <script src="../reviewed-translations.js"></script>
+    <script src="../translation-client.js"></script>
+    <script src="util.js"></script>
+    <script src="../speech-client.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

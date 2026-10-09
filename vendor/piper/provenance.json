@@ -1,0 +1,66 @@
+{
+  "package": "@diffusionstudio/piper-wasm",
+  "version": "1.0.0",
+  "gitHead": "69522c832bd52d7c16389e9a8aee568065027689",
+  "tarball": "https://registry.npmjs.org/@diffusionstudio/piper-wasm/-/piper-wasm-1.0.0.tgz",
+  "tarballSha256": "e5be7f15b3ec42b09fca3616db2ce3e2cf83faacc9c291c400ccf48a9d85c803",
+  "files": {
+    "piper_phonemize.wasm": {
+      "bytes": 635212,
+      "sha256": "b777cd107a91d2bcc6a1ea46f2c26a662a7407394fe84589198aeaa83dd7a9d6"
+    },
+    "ESPEAK-NG-COPYING.txt": {
+      "bytes": 35147,
+      "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    "PIPER-PHONEMIZE-LICENSE.txt": {
+      "bytes": 1071,
+      "sha256": "13746d509d74e55ea2265fbef204bb7cdbf84a8315b0207e988326cb54387028"
+    },
+    "phonemize.js": {
+      "bytes": 120752,
+      "sha256": "e7a60b1651333fe4fe3d2a9738cd0ab11d6c963f3029744b9a106d0cde5c8b88"
+    },
+    "NOTICE.txt": {
+      "bytes": 815,
+      "sha256": "2a35bdb6f221037b30eb9ddd542548d4483dd63c4a379abfe0b5806da47d5b5c"
+    },
+    "piper_phonemize.data": {
+      "bytes": 18077249,
+      "sha256": "29f1025eb23a5b5c192cd14a6efbce4509402ff265405072ee6f7d1a09b78f8c"
+    },
+    "EMSCRIPTEN-LICENSE.txt": {
+      "bytes": 5093,
+      "sha256": "620a78084fc7ca97c0b5dea9abf891f3ffcadfdbf305276f099c9c4e12fc1d86"
+    },
+    "UNI-ALGO-LICENSE.txt": {
+      "bytes": 2208,
+      "sha256": "c55648b02873556d6ab2de14938998101fda3a0f293337542af9196435def318"
+    },
+    "BUILD-SOURCE.md": {
+      "bytes": 2057,
+      "sha256": "f840820a5733d096abe5ce5e526b1a74aa84ba6f47fbe96faf13606b91e106a3"
+    }
+  },
+  "changes": [
+    "phonemize.js is original piper_phonemize.js with ESM default export appended; engine/assets unchanged"
+  ],
+  "provenanceLimit": "Upstream recipe pins Emscripten 3.1.47 but shallow-clones espeak/piper-phonemize without pinned source commits; exact engine source revision not asserted.",
+  "unmodifiedAssets": {
+    "piper_phonemize.js": "fef0c2fc442d24fdef5c7c7cc37d5da2314407640fe11ab1bfe347c723dff19b",
+    "piper_phonemize.wasm": "b777cd107a91d2bcc6a1ea46f2c26a662a7407394fe84589198aeaa83dd7a9d6",
+    "piper_phonemize.data": "29f1025eb23a5b5c192cd14a6efbce4509402ff265405072ee6f7d1a09b78f8c"
+  },
+  "upstreamSources": {
+    "buildRecipe": "https://github.com/diffusionstudio/piper-wasm/blob/69522c832bd52d7c16389e9a8aee568065027689/README.md",
+    "piperPhonemize": "https://github.com/wide-video/piper-phonemize",
+    "espeak": "https://github.com/rhasspy/espeak-ng",
+    "emscripten": "https://github.com/emscripten-core/emscripten/tree/3.1.47"
+  },
+  "licenseSources": {
+    "PIPER-PHONEMIZE-LICENSE.txt": "https://raw.githubusercontent.com/rhasspy/piper-phonemize/master/LICENSE.md",
+    "ESPEAK-NG-COPYING.txt": "https://raw.githubusercontent.com/rhasspy/espeak-ng/master/COPYING",
+    "EMSCRIPTEN-LICENSE.txt": "https://raw.githubusercontent.com/emscripten-core/emscripten/3.1.47/LICENSE",
+    "UNI-ALGO-LICENSE.txt": "https://raw.githubusercontent.com/uni-algo/uni-algo/main/LICENSE.md"
+  }
+}

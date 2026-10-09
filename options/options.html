@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /><title>WordWorkshop 设置</title><link rel="stylesheet" href="options.css" /></head>
+<body>
+<main class="container">
+  <header><img src="../assets/icon_book_64.png" alt="" width="30" height="30" /><div><h1>WordWorkshop 设置</h1><p>中文对照 · 本机英语朗读</p></div></header>
+  <section aria-labelledby="translation-title"><h2 id="translation-title">释义与例句中文</h2><p class="help">每条英文释义和例句下方显示对应中文。内置译文直接显示；其余内容由自带的英汉模型在本机生成并标明来源，可离线使用。首次加载模型可能需要稍等。</p><button type="button" id="prepare-translation" class="btn secondary">检查本机中文翻译</button><p id="translation-notice" class="help" role="status"></p></section>
+  <section aria-labelledby="speech-title">
+    <h2 id="speech-title">英语发音</h2>
+    <p class="help">已使用你选中的 Cori 英式声音。试听直接播放原音频；查词使用同一个音色生成读音。旧设置会自动切换为 Cori、正常语速。</p>
+    <label for="voice">音色</label><select id="voice" disabled><option value="">正在加载本机音色…</option></select>
+    <label for="rate">查词语速</label><select id="rate" disabled><option value="0.85">稍慢 · 0.85 倍</option><option value="1" selected>正常 · 1 倍</option><option value="1.15">稍快 · 1.15 倍</option></select>
+    <div class="actions"><button type="button" id="preview" class="btn">试听英语</button><button type="button" id="stop-speech" class="btn secondary">停止</button></div>
+    <p id="speech-notice" role="status" class="help"></p>
+    <audio id="reference-audio" preload="none" src="../assets/piper-gb-demo.wav" hidden></audio>
+    <p class="help">原音频：piper-gb-demo.wav<br />“Apple. Dictionary. Education.”<br />试听始终按原速播放；语速选项只调整查词朗读。</p>
+  </section>
+  <section aria-labelledby="theme-title"><h2 id="theme-title">外观</h2><div class="choices"><label><input type="radio" name="theme" value="system" checked /> 跟随系统</label><label><input type="radio" name="theme" value="light" /> 浅色</label><label><input type="radio" name="theme" value="dark" /> 深色</label></div></section>
+  <section aria-labelledby="shortcut-title"><h2 id="shortcut-title">查词快捷键</h2><label for="shortcut">当前快捷键</label><input id="shortcut" type="text" readonly /><button type="button" id="update" hidden>修改</button><button type="button" id="reset" hidden>重置</button><button type="button" id="browser-shortcuts" class="btn secondary">在浏览器中修改快捷键</button><p id="shortcut-help" class="help">也可随时点击工具栏中的书本图标。</p></section>
+  <section aria-labelledby="local-title"><h2 id="local-title">本地插件</h2><p class="help" id="version"></p><p class="help">更新本地文件后，重新加载一次插件，并刷新已打开的英文网页。查词和朗读不使用在线服务。</p><button type="button" id="reload-extension" class="btn secondary">重新加载插件</button><p id="reload-notice" role="status" class="help"></p><a href="../DATA-LICENSE.html" target="_blank">词库与许可来源</a></section>
+</main>
+<script src="../speech-engine.js"></script><script src="../translation-client.js"></script><script src="options.js"></script>
+</body></html>

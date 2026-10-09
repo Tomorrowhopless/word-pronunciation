@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><title>WordWorkshop 数据来源与许可</title>
+<body style="max-width:760px;margin:40px auto;padding:0 20px;font:17px/1.8 system-ui,sans-serif">
+<h1>词典数据来源与许可</h1>
+<p>常见词的优先释义、例句和同义词来自 <a href="https://github.com/wordset/wordset-dictionary">Wordset, Inc. 及贡献者</a>，由 WordWorkshop v4.0.0 官方扩展包中的已处理数据导入。按 <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> 使用，另完整保留随附 WORDSET-LICENSE.txt 中的 WordNet 3.0 Princeton 版权和免责通知。Wordset 通常采用较短释义和现代例句，但没有严格控制用词难度或按常用义排序。</p>
+<p>英语释义、音标、例句、词源来自 Wiktionary 贡献者。使用的机器可读数据由
+<a href="https://huggingface.co/datasets/cstr/en-wiktionary-extracted-all">cstr/en-wiktionary-extracted-all</a>
+通过 Wiktextract 提取，数据集发布者标记为 CC BY-SA 4.0。它是第三方数据快照；数据卡未注明 Wiktionary 原始快照日期。</p>
+<p>本地版本合并小写词条、Wiktionary 每词最多保留八条释义、每义项一条例句及部分音标、同反义词，将词源缩短至 300 字，随后以完整 Wordset 义项替换相应词的释义/例句/同义词，保留 Wiktionary 音标和词源，并压缩为按字母分组的文件。这些改编数据按
+<a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a>
+许可提供。原文与贡献历史可通过每个词条的 Wiktionary 链接查看。</p>
+<p>另将 run、study、education 的已核对学习义项移至最前，原释义和例句保持不变；从 <a href="https://en.wiktionary.org/wiki/I#English">Wiktionary I 英语代词段</a>补入代词 I，修复小写合并后字母义覆盖人称代词的问题。</p>
+<p>扩展程序代码基于 <a href="https://github.com/atishmish/dictionary_browser_extension">WordWorkshop</a>，按随附 LICENSE 的 MIT 许可提供；本机版本修复 Chromium 快捷键设置与本地语音选择，并增加压缩加载及内存缓存上限。</p>
+<h2>中文释义</h2>
+<p>中文词库来自 <a href="https://github.com/skywind3000/ECDICT/tree/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b">ECDICT 固定源码版本</a>，按 MIT 许可使用，完整保留 ECDICT-LICENSE.txt。规范化小写键、还原换行、跳过空译文后，包含 768,739 个可查询中文词条。这套中文作为顶部独立的词级释义展示。另为每条英英释义和英语例句显示逐句中文，来源如下。词形回退明确标注其参考原词。</p>
+<p>本地修订了 a 的不定冠词解释、I 的人称代词解释和 run 的词形说明（过去式 ran、过去分词 run），其余中文措辞保留数据来源。原译文、改后译文和处理方式见 data/chinese-build-info.json。原始词库可能仍含少见、旧式或专业用法。</p>
+<h2>逐句中文与本机模型</h2>
+<p>每条英文释义与例句下方添加中文对照，英文保持原样。精确匹配的内置核对译文见 reviewed-translations.js，它们是相应 Wordset/Wiktionary 内容的中文改编，按 CC BY-SA 4.0 提供；其余译文由本机模型生成，并标明“本机机器翻译”。</p>
+<p>自带模型为 <a href="https://huggingface.co/onnx-community/opus-mt-en-zh">ONNX Community 的 opus-mt-en-zh</a>，固定版本 4dc37afc6deb160f4c9048260d48019ee497658e（CC BY 4.0），量化权重保持原样。原模型来自 Helsinki-NLP，原模型卡声明 Apache 2.0。归属、原模型卡、许可和文件哈希保留在 models/。运行库 Transformers.js 3.8.1 为 Apache 2.0、ONNX Runtime 为 MIT，许可与第三方通知保留在 vendor/。</p>
+<p>英汉模型仅加载插件本地资源，远端模型加载关闭；也可复用浏览器已经可用的本机语言包。最多保留 500 条句子译文（上限 1 MiB）在本地存储中，机器翻译可能不够自然，应结合英文理解。</p>
+<h2>本机朗读</h2>
+<p>默认朗读使用插件自带的 <a href="https://huggingface.co/rhasspy/piper-voices/tree/c10ece1aade47bb51c153c893d14e5bf8e5b7117">Piper Cori high 英式模型</a>在本机生成 WAV 并播放。仓库声明 MIT，所选 Cori 模型卡声明 LibriVox 数据集为 public domain；原声明、模型卡、固定版本及文件哈希保留在 models/piper-en/ 和 models/speech-model-info.json。</p>
+<p>ONNX Runtime 为 MIT。Piper 音素前端包声明 MIT，内嵌 eSpeak NG 引擎适用 GNU GPL v3 或更高版本；Emscripten 为 MIT / UIUC，uni-algo 为 MIT。完整许可、源码链接、原构建说明及预编译引擎来源边界见 vendor/piper/ 和 models/NOTICE.md。以上组件按各自许可保留，原程序的 MIT 许可不覆盖第三方组件。</p>
+<p>声音固定为 Cori 英式，所有旧偏好首次迁移为 Cori 1 倍速；保存 cori-reference-v1 后可调整查词速度。设置试听播放用户指定的 assets/piper-gb-demo.wav 原文件（Apple. Dictionary. Education.），始终原速；查词使用同一 Cori 模型生成，不调用系统 TTS 或切换其他声音。生成音频的缓存只留在内存中（最多 32 条、8 MiB）。查询词、最近查询、音色偏好和最近朗读状态只存储在各浏览器的本地扩展存储中；运行代码不调用在线查词、翻译或语音服务。</p>
+<p>词库不是 Oxford 官方词典。部分词没有音标或例句，释义也不保证使用受控基础英语。系统音量及输出设备仍会影响实际听到的声音。</p>
+</body></html>

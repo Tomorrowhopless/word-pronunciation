@@ -1,0 +1,183 @@
+{
+  "sourceLines": 1474403,
+  "sourceSha256": "00a4adb2f674668fdb31a1268446762d08595808b01d32b8ec93c16ed1da568d",
+  "wordCount": 1241489,
+  "ipaCount": 89911,
+  "exampleCount": 202081,
+  "uncompressedBytes": 259490770,
+  "compressedBytes": 67409762,
+  "files": [
+    {
+      "file": "a.json.gz",
+      "count": 74210,
+      "bytes": 4159059,
+      "sha256": "2327b3a804860f1aa942903f45ab7341776ed6edce2f930faf6fa3b6bc497da8"
+    },
+    {
+      "file": "b.json.gz",
+      "count": 77806,
+      "bytes": 4326806,
+      "sha256": "6b11b75b27dc416b21ce93e7f3170cbecfe66170c084d262f397430877fad6a5"
+    },
+    {
+      "file": "c.json.gz",
+      "count": 106278,
+      "bytes": 5750231,
+      "sha256": "08131bdd1b07ddf3bd96453633e3b4669526c55b1ee113115d9dadfdf2173473"
+    },
+    {
+      "file": "d.json.gz",
+      "count": 63981,
+      "bytes": 3417250,
+      "sha256": "6b13adca8f82e2b52461ff5d5c504a515e6ba0524555fd52cb16658c881d8091"
+    },
+    {
+      "file": "e.json.gz",
+      "count": 41554,
+      "bytes": 2222073,
+      "sha256": "785ac418db0d26c8b038d9abdfea213961264763f7ee001283b695f255a402ea"
+    },
+    {
+      "file": "f.json.gz",
+      "count": 45843,
+      "bytes": 2606763,
+      "sha256": "ad8d45f9fdc26b7ce3b166f7a9720127cf3a1c29f177c23cd9f265285dd7e47a"
+    },
+    {
+      "file": "g.json.gz",
+      "count": 45964,
+      "bytes": 2526837,
+      "sha256": "b832b59d6be01e604d761efcfce670c38ef63b6bcfaf4fc28e99480750e70e12"
+    },
+    {
+      "file": "h.json.gz",
+      "count": 53672,
+      "bytes": 2924864,
+      "sha256": "5b4bbc3082440d7168d1f974bf0fea1b3813b68d1990db9136a685b103902fbe"
+    },
+    {
+      "file": "i.json.gz",
+      "count": 34771,
+      "bytes": 1925740,
+      "sha256": "b76f6f570aadd86682670ebaa6aa141bdcebf94695b9297f1ddde4c91eb814d5"
+    },
+    {
+      "file": "j.json.gz",
+      "count": 11175,
+      "bytes": 709811,
+      "sha256": "70a156b06feb449cc4b1fab004f574b1baf8c832aaa62679b3f0f2323959004c"
+    },
+    {
+      "file": "k.json.gz",
+      "count": 22012,
+      "bytes": 1201961,
+      "sha256": "66e131cd16f118de3b6d4fdfc934f9b2840c42313102e9c7c8ab348559860d72"
+    },
+    {
+      "file": "l.json.gz",
+      "count": 41040,
+      "bytes": 2291301,
+      "sha256": "2b1b06e489d9b5eff984d44e9ce82bf10f3b1840d4b0515664f886cac1725984"
+    },
+    {
+      "file": "m.json.gz",
+      "count": 81256,
+      "bytes": 4305006,
+      "sha256": "bcc0405624231121a4ac21d69964c7511acff2f2f03e0c15e94a2badda2ab623"
+    },
+    {
+      "file": "n.json.gz",
+      "count": 42255,
+      "bytes": 2187712,
+      "sha256": "e3464db3cad9d6159abaa160ef83ba737a87537f6b4dab0477289fac9ffe0318"
+    },
+    {
+      "file": "o.json.gz",
+      "count": 34073,
+      "bytes": 1833828,
+      "sha256": "3d22b6f9e03963313840b700763870149307a7eb7f600decffdb73c4c3f78f94"
+    },
+    {
+      "file": "p.json.gz",
+      "count": 103755,
+      "bytes": 5449366,
+      "sha256": "5b05ca385012364de02c6fbab003163b120ac4c3bcaaa2a4d9cf6513173ff1cc"
+    },
+    {
+      "file": "q.json.gz",
+      "count": 6456,
+      "bytes": 381194,
+      "sha256": "87370a0bb1bfc13b5072c8f1017ca590cdec4a09ed2f9cf4939386b417f35637"
+    },
+    {
+      "file": "r.json.gz",
+      "count": 56975,
+      "bytes": 2730253,
+      "sha256": "dc41c21f126309fdd67791b3c60dd50d1af3ff0ea54e20aa44dae79a2ae1d669"
+    },
+    {
+      "file": "s.json.gz",
+      "count": 129987,
+      "bytes": 7093706,
+      "sha256": "5cd238698c463ce0308ea547490ff8e4401abfeb0e1e568962352e6c63ddce72"
+    },
+    {
+      "file": "t.json.gz",
+      "count": 66627,
+      "bytes": 3698215,
+      "sha256": "ba22666fdc98d3d995ea52eb909492dfe4df6456730d7becd613c650b7ef26c7"
+    },
+    {
+      "file": "u.json.gz",
+      "count": 34923,
+      "bytes": 1756565,
+      "sha256": "45c79818315c9c809b8ac627bdb89f25edb25f2069e371b1a60272f0c5bcaf18"
+    },
+    {
+      "file": "v.json.gz",
+      "count": 17207,
+      "bytes": 923813,
+      "sha256": "06a1df2abc6fa1818efe0f4a5b9c03485768bb50a3ecf17ca8494abf6c975c21"
+    },
+    {
+      "file": "w.json.gz",
+      "count": 30818,
+      "bytes": 1785053,
+      "sha256": "c05f2735447743dae1131c668ecafb97dde585fc0f64b22bd7d01d66b29a11f9"
+    },
+    {
+      "file": "x.json.gz",
+      "count": 2347,
+      "bytes": 147654,
+      "sha256": "027c307f725e612536c69912a76f25123551355d62750760a3a1bcbb04ed7179"
+    },
+    {
+      "file": "y.json.gz",
+      "count": 5794,
+      "bytes": 389971,
+      "sha256": "e9502dd85382297240952be3b64737fe20445f907d1ae0c0e9653e431844c187"
+    },
+    {
+      "file": "z.json.gz",
+      "count": 5868,
+      "bytes": 341888,
+      "sha256": "85b232170e50fe6295d26154bd5ff70e5a8620ea1820f2e2a1743f92a849ba54"
+    },
+    {
+      "file": "misc.json.gz",
+      "count": 4842,
+      "bytes": 322842,
+      "sha256": "1b0e8b64e63beeaee0dc2f82d81b3dac8df5a757ea98a32279c0ad835efadcbf"
+    }
+  ],
+  "wordsetWords": 108127,
+  "wordsetSource": "WordWorkshop v4.0.0 chrome release, Wordset data",
+  "wordsetReleaseSha256": "ac1de7dac9e089c0bb3fb161433e7350200ac8afd561f88b2322cd81d1d2324e",
+  "reorderedStudyWords": [
+    "run",
+    "study",
+    "education"
+  ],
+  "pronounISource": "https://en.wiktionary.org/wiki/I#English",
+  "sourceUrl": "https://huggingface.co/datasets/cstr/en-wiktionary-extracted-all/resolve/855a9be08bf9eacc9914cb0221eeab92570a7556/en-wiktionary-all.jsonl"
+}

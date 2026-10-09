@@ -90,7 +90,7 @@ async function searchWord(keyword) {
       if (ticket !== searchSerial) return;
       setDefinition(response.entry, stemInfo);
     } else if (response && response.error) {
-      setMsg('离线词库加载失败，请确认 WordWorkshop 文件夹完整，然后重新加载扩展。');
+      setMsg('离线词库加载失败，请确认 word-pronunciation 文件夹完整，然后重新加载扩展。');
     } else if (response && response.suggestions && response.suggestions.length > 0) {
       showSuggestions(keyword, response.suggestions);
     } else {

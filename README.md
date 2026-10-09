@@ -1,9 +1,9 @@
-# WordWorkshop · 中英对照词典
+# word-pronunciation · 中英对照词典
 
 同时提供网页版和 Chrome / Edge 离线插件。中文释义、英语解释、例句与逐句中文放在一起；英语朗读固定使用 Cori 英式声音。
 
-- [打开网页版](https://Tomorrowhopless.github.io/wordworkshop/)
-- [下载完整离线插件](https://github.com/Tomorrowhopless/wordworkshop/releases/latest)
+- [打开网页版](https://Tomorrowhopless.github.io/word-pronunciation/)
+- [下载完整离线插件](https://github.com/Tomorrowhopless/word-pronunciation/releases/latest)
 
 ## 使用网页版
 
@@ -13,7 +13,7 @@
 
 ## 安装离线插件
 
-1. 在 Releases 下载 `wordworkshop-4.7.0.zip` 并解压，保留其中的 `WordWorkshop` 文件夹。
+1. 在 Releases 下载 `word-pronunciation-4.7.0.zip` 并解压，保留其中的 `word-pronunciation` 文件夹。
 2. Chrome 打开 `chrome://extensions`，Edge 打开 `edge://extensions`，开启开发者模式，点击“加载已解压的扩展程序”，选择该文件夹。
 3. 在工具栏固定书本图标。点击图标查词，或在普通英文网页上双击单词。
 
@@ -31,7 +31,7 @@
 
 源码仓库不直接保存大型模型和生成资源。需要运行完整版本时，请从 Releases 下载完整包；源码 ZIP 不等于可离线运行的插件。
 
-开发时，先将完整安装包中 `WordWorkshop` 文件夹的内容复制到源码目录，再执行下列测试、资源校验和打包命令。
+开发时，先将完整安装包中 `word-pronunciation` 文件夹的内容复制到源码目录，再执行下列测试、资源校验和打包命令。
 
 - `npm test`：检查程序行为。
 - `node scripts/verify-local-model.js`：校验完整安装包中的模型与运行库。

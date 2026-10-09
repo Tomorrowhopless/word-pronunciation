@@ -17,9 +17,9 @@ npm run release:package
 
 需要单独上传可公开源码时执行 `python3 scripts/package-release.py --source-output dist/source`；此目录剔除大资源和本机验证记录，并拒绝含具体用户主目录路径的文本。
 
-生成 `dist/wordworkshop-<版本>.zip` 和同名 `.zip.sha256`。ZIP 顶层为 `WordWorkshop/`，包含 manifest、所有运行模块、完整 data/models/vendor/assets、web 以及许可资料；不包含本机部署说明、历史验证记录、PRODUCT.md、测试及开发临时资料。打包器只收录明确的运行目录与文件，并检查作者文本中的本机绝对路径；发布前仍应检查源码 diff 和公开许可资料。
+生成 `dist/word-pronunciation-<版本>.zip` 和同名 `.zip.sha256`。ZIP 顶层为 `word-pronunciation/`，包含 manifest、所有运行模块、完整 data/models/vendor/assets、web 以及许可资料；不包含本机部署说明、历史验证记录、PRODUCT.md、测试及开发临时资料。打包器只收录明确的运行目录与文件，并检查作者文本中的本机绝对路径；发布前仍应检查源码 diff 和公开许可资料。
 
-插件使用者解压后，在 Chrome/Edge 的扩展管理页启用开发者模式，以“加载已解压的扩展”选择 `WordWorkshop` 文件夹。不要选择外层下载目录。
+插件使用者解压后，在 Chrome/Edge 的扩展管理页启用开发者模式，以“加载已解压的扩展”选择 `word-pronunciation` 文件夹。不要选择外层下载目录。
 
 ## 发布顺序
 

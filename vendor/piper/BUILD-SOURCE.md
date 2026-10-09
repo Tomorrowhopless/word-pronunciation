@@ -36,8 +36,8 @@ emmake cmake --build build --config Release
 ```
 
 
-## Fixed source archive for WordWorkshop 4.7.0
+## Fixed source archive for word-pronunciation 4.7.0
 
-The accompanying [phonemizer-source-4.7.0.tar.gz](https://github.com/Tomorrowhopless/wordworkshop/releases/download/v4.7.0/phonemizer-source-4.7.0.tar.gz) contains full fixed source trees and original notices, build-fixed.sh, the publisher recipe, modified ESM JS source, and SOURCE-EVIDENCE.json. Piper wrapper: cfff8e52ebaea37c7e953ae2d06b174acb827ac4 (default branch wide.video, last change April 2 2024). Its CMake explicitly selects eSpeak engine 0f65aa301e0d6bae5e172cc74197d32a6182200f. Dictionary/voice source tree: 8593723f10cfd9befd50de447f14bf0a9d2a14a4 (default master, last change November 27 2023). Both branch heads predate publisher commit July 5 2024 and remain unchanged.
+The accompanying [phonemizer-source-4.7.0.tar.gz](https://github.com/Tomorrowhopless/word-pronunciation/releases/download/v4.7.0/phonemizer-source-4.7.0.tar.gz) contains full fixed source trees and original notices, build-fixed.sh, the publisher recipe, modified ESM JS source, and SOURCE-EVIDENCE.json. Piper wrapper: cfff8e52ebaea37c7e953ae2d06b174acb827ac4 (default branch wide.video, last change April 2 2024). Its CMake explicitly selects eSpeak engine 0f65aa301e0d6bae5e172cc74197d32a6182200f. Dictionary/voice source tree: 8593723f10cfd9befd50de447f14bf0a9d2a14a4 (default master, last change November 27 2023). Both branch heads predate publisher commit July 5 2024 and remain unchanged.
 
 Publisher original JS/WASM/data SHA256 values exactly match our original assets. Of 494 preloaded data entries, 327 raw lang/voice files were compared against the fixed source tree and all match byte-for-byte; 167 are compiled data outputs not directly compared. The included fixed build adaptation redirects CMake engine fetching to the included local source. It requires separately installed Emscripten 3.1.47 and native build tools. It has not been run locally, and we do not claim byte-for-byte WASM reproduction. Archive hash/size are recorded in provenance.json.

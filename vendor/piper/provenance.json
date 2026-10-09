@@ -22,8 +22,8 @@
       "sha256": "e7a60b1651333fe4fe3d2a9738cd0ab11d6c963f3029744b9a106d0cde5c8b88"
     },
     "NOTICE.txt": {
-      "bytes": 1238,
-      "sha256": "f0e7848ed4bff5620f12ba86e9e18bfeb2b3d10229fb9737515da4274d1c618c"
+      "bytes": 1297,
+      "sha256": "97eaa397ea83fd5e575b719340c707ee1be2105d00884ae2a74f9ccd3f7e48c9"
     },
     "piper_phonemize.data": {
       "bytes": 18077249,
@@ -38,8 +38,8 @@
       "sha256": "c55648b02873556d6ab2de14938998101fda3a0f293337542af9196435def318"
     },
     "BUILD-SOURCE.md": {
-      "bytes": 3367,
-      "sha256": "34e3d4b70f27190beec7af37f812b51fd78d8746fc80f2575a822e3d2ee6ab6c"
+      "bytes": 3379,
+      "sha256": "b49161ec435e9ad4996f6229ad1aafcb70e08f9b5f7d929720a396a901100a5b"
     }
   },
   "changes": [
@@ -71,7 +71,7 @@
     "publisher": "69522c832bd52d7c16389e9a8aee568065027689"
   },
   "correspondingSource": {
-    "url": "https://github.com/Tomorrowhopless/wordworkshop/releases/download/v4.7.0/phonemizer-source-4.7.0.tar.gz",
+    "url": "https://github.com/Tomorrowhopless/word-pronunciation/releases/download/v4.7.0/phonemizer-source-4.7.0.tar.gz",
     "bytes": 42312431,
     "sha256": "f50fcf0263cd142064ea494959a297703f37d3cd610dbacb89603178ecd03e1b",
     "contents": "Complete fixed Piper wrapper, eSpeak engine source, eSpeak dictionary/voice source, original licenses, upstream recipe, fixed build adaptation, source-file byte-match evidence, modified ESM JS source",

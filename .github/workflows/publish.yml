@@ -33,7 +33,7 @@ jobs:
           RELEASE_TAG: ${{ inputs.tag || github.event.release.tag_name }}
         run: |
           mkdir release-assets
-          gh release download "$RELEASE_TAG" --pattern 'wordworkshop-*.zip' --pattern 'wordworkshop-*.zip.sha256' --dir release-assets
+          gh release download "$RELEASE_TAG" --pattern 'word-pronunciation-*.zip' --pattern 'word-pronunciation-*.zip.sha256' --dir release-assets
           python - <<'PY'
           from pathlib import Path
           import hashlib

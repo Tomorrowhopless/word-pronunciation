@@ -48,12 +48,12 @@ def build(root, output):
             if '/Users/' in text or '/private/tmp/' in text:
                 raise ValueError('Local path in release: ' + str(relative))
     output.mkdir(parents=True, exist_ok=True)
-    archive = output / ('wordworkshop-' + version + '.zip')
+    archive = output / ('word-pronunciation-' + version + '.zip')
     with zipfile.ZipFile(archive, 'w', zipfile.ZIP_DEFLATED, compresslevel=6) as bundle:
         for directory in DIRS:
-            bundle.writestr('WordWorkshop/' + directory + '/', '')
+            bundle.writestr('word-pronunciation/' + directory + '/', '')
         for path in files:
-            bundle.write(path, 'WordWorkshop/' + path.relative_to(root).as_posix())
+            bundle.write(path, 'word-pronunciation/' + path.relative_to(root).as_posix())
     if archive.stat().st_size >= 2 * 1024**3:
         raise ValueError('Release asset must be under 2 GiB')
     digest = hashlib.file_digest(archive.open('rb'), 'sha256').hexdigest()
@@ -68,20 +68,20 @@ def pages(archive, output):
         with zipfile.ZipFile(archive) as bundle:
             for item in bundle.infolist():
                 path = PurePosixPath(item.filename)
-                if path.is_absolute() or '..' in path.parts or not path.parts or path.parts[0] != 'WordWorkshop' or '\\' in item.filename:
+                if path.is_absolute() or '..' in path.parts or not path.parts or path.parts[0] != 'word-pronunciation' or '\\' in item.filename:
                     raise ValueError('Unsafe archive path')
                 if (item.external_attr >> 16) & 0o170000 == 0o120000:
                     raise ValueError('Symlink in archive')
             if sum(item.file_size for item in bundle.infolist()) >= 1_000_000_000:
                 raise ValueError('Pages site must be below 1 GB')
             bundle.extractall(staging)
-        root = staging / 'WordWorkshop'
+        root = staging / 'word-pronunciation'
         list(selected(root))
         if not (root / 'web/index.html').is_file():
             raise ValueError('Missing web/index.html')
         shutil.copytree(root, output)
     (output / '.nojekyll').touch()
-    (output / 'index.html').write_text('<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=./web/"><title>WordWorkshop</title><a href="./web/">打开离线词典网页版</a></html>')
+    (output / 'index.html').write_text('<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=./web/"><title>word-pronunciation</title><a href="./web/">打开离线词典网页版</a></html>')
     print(json.dumps({'pages': str(output), 'bytes': sum(p.stat().st_size for p in output.rglob('*') if p.is_file())}))
 
 def source(root, output):

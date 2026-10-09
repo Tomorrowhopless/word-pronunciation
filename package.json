@@ -1,7 +1,7 @@
 {
-  "name": "wordworkshop",
+  "name": "word-pronunciation",
   "version": "4.7.0",
-  "description": "WordWorkshop 本地英汉对照词典与正常英语朗读",
+  "description": "word-pronunciation 本地英汉对照词典与 Cori 英式朗读",
   "main": "background.js",
   "directories": {
     "test": "tests"

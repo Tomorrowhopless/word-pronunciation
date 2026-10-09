@@ -4,13 +4,13 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; connect-src 'self'; worker-src 'self'; media-src 'self' blob:; img-src 'self' data:; object-src 'none'; base-uri 'self'" />
   <meta name="description" content="中英对照英语词典，提供中文释义、英文例句和 Cori 英式发音。也可下载 Chrome、Edge 离线插件。" />
-  <title>WordWorkshop · 中英对照词典</title>
+  <title>word-pronunciation · 中英对照词典</title>
   <link rel="icon" href="../assets/icon_book_64.png" /><link rel="stylesheet" href="../browserAction/style.css" /><link rel="stylesheet" href="web.css" />
 </head>
 <body>
   <a class="skip-link" href="#search">跳到查词</a>
   <div class="page-shell">
-    <header class="site-header"><a class="brand" href="./"><img src="../assets/icon_book_64.png" alt="" width="32" height="32" /><span>WordWorkshop<small>中英对照词典</small></span></a><nav aria-label="项目链接"><a id="repository-link" href="https://github.com/Tomorrowhopless/wordworkshop" target="_blank" rel="noopener">GitHub</a><a id="download-link" class="download-link" href="https://github.com/Tomorrowhopless/wordworkshop/releases/latest" target="_blank" rel="noopener">下载离线插件 <span aria-hidden="true">↗</span></a></nav></header>
+    <header class="site-header"><a class="brand" href="./"><img src="../assets/icon_book_64.png" alt="" width="32" height="32" /><span>word-pronunciation<small>中英对照词典</small></span></a><nav aria-label="项目链接"><a id="repository-link" href="https://github.com/Tomorrowhopless/word-pronunciation" target="_blank" rel="noopener">GitHub</a><a id="download-link" class="download-link" href="https://github.com/Tomorrowhopless/word-pronunciation/releases/latest" target="_blank" rel="noopener">下载离线插件 <span aria-hidden="true">↗</span></a></nav></header>
     <main>
       <section class="lookup-panel" aria-labelledby="lookup-title">
         <div class="intro"><h1 id="lookup-title">读懂英文，从一个词开始</h1><p>中文释义、英文解释与例句，放在一起看。</p></div>
@@ -28,11 +28,11 @@
       </section>
       <aside class="tools" aria-label="使用说明与声音">
         <details><summary>声音与语速</summary><p>Cori 英式声音，与离线插件一致。</p><label for="rate">查词语速</label><select id="rate"><option value="0.85">稍慢 · 0.85 倍</option><option value="1" selected>正常 · 1 倍</option><option value="1.15">稍快 · 1.15 倍</option></select><button id="preview" type="button" class="secondary">试听原音频</button><button id="stop-preview" type="button" class="text-button">停止试听</button><p id="preview-notice" class="status" role="status"></p><audio id="reference-audio" src="../assets/piper-gb-demo.wav" preload="none"></audio></details>
-        <details><summary>网页版与离线插件</summary><p>网页版打开即可查词。首次查询按需读取词库；首次朗读约下载 155 MB、逐句中文约 275 MB，请稍等；计算在你的设备上完成。</p><p>无需网络使用、在其他网页双击查词，请下载 Chrome / Edge 离线插件，解压后加载其中的 WordWorkshop 文件夹。</p></details>
+        <details><summary>网页版与离线插件</summary><p>网页版打开即可查词。首次查询按需读取词库；首次朗读约下载 155 MB、逐句中文约 275 MB，请稍等；计算在你的设备上完成。</p><p>无需网络使用、在其他网页双击查词，请下载 Chrome / Edge 离线插件，解压后加载其中的 word-pronunciation 文件夹。</p></details>
         <label class="theme-control" for="theme">外观<select id="theme"><option value="system">跟随系统</option><option value="light">浅色</option><option value="dark">深色</option></select></label>
       </aside>
     </main>
-    <footer class="site-footer"><span>WordWorkshop · 中英对照，让理解更进一步</span><a href="../DATA-LICENSE.html">数据来源与许可</a></footer>
+    <footer class="site-footer"><span>word-pronunciation · 中英对照，让理解更进一步</span><a href="../DATA-LICENSE.html">数据来源与许可</a></footer>
   </div>
   <script src="storage.js"></script><script src="../reviewed-translations.js"></script><script src="../translation-client.js"></script><script src="../browserAction/util.js"></script><script type="module" src="app.js"></script>
 </body></html>

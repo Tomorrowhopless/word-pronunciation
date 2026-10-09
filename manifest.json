@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "WordWorkshop",
+  "name": "word-pronunciation",
   "homepage_url": "https://github.com/atishmish/dictionary_browser_extension",
   "version": "4.7.0",
   "description": "离线英语词典：中文释义、逐句中文对照、本机英语朗读。",
@@ -39,7 +39,7 @@
       "64": "assets/icon_book_64.png"
     },
     "default_popup": "browserAction/index.html",
-    "default_title": "WordWorkshop"
+    "default_title": "word-pronunciation"
   },
   "commands": {
     "_execute_action": {
